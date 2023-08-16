@@ -9,11 +9,23 @@
   <h1 class="color" *ngIf="show">Uploaded sucessfully</h1>
   <button *ngIf="show" (click)="getData()">Show data</button>
   <div *ngIf="ExcelData">
-    <div *ngFor="let item of ExcelData">
-      <p>ID: {{ item?.id }}</p>
-      <p>Column 1: {{ item?.column1 }}</p>
-      <p>Column 2: {{ item?.column2 }}</p>
-      <hr>
+      <table>
+        <thead>
+    <tr>
+      <th>id</th>
+      <th>Column 2</th>
+      <th>Column 3</th>
+    </tr>
+  </thead>
+  <tbody>
+       <ng-container *ngFor="let item of ExcelData">
+    <tr>
+      <td>{{ item?.id }}</td>
+      <td>{{ item?.column1 }}</td>
+      <td> {{ item?.column2 }}</td>
+    </tr>
+       </ng-container>
+  </tbody>
+      </table>
     </div>
-  </div>
   

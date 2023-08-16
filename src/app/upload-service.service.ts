@@ -8,7 +8,7 @@ export class UploadServiceService {
   uploadFile(file: File) {
     const formData = new FormData();
     formData.append('file', file);
-    return this.http.post('http://localhost:8080/upload', formData,{ observe: 'response', responseType: 'text' });
+    return this.http.post('https://excel-production-0d24.up.railway.app/upload', formData,{ observe: 'response', responseType: 'text' });
   }
   getData(){    
     return this.http.get('http://localhost:8080/getdata',{ observe: 'response', responseType: 'text' })
